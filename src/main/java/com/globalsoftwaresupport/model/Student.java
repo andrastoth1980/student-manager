@@ -10,37 +10,40 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-
 public class Student {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	
+
 	@Column
 	private String name;
+	
 	@Column
 	private int age;
+	
 	@Column
 	private int zipCode;
+	
 	@Column
 	private String country;
 	
 	@ManyToOne
 	@JoinColumn
-	private Status status;
-	
+	private Status status; 
+
 	public Student() {
-		
+
 	}
 
-	public Student(String name, int age, int zipCode, String country, Status status) {
+	public Student(String name, int age, int zipCode, 
+			String country, Status status) {
 		this.name = name;
 		this.status = status;
 		this.age = age;
 		this.zipCode = zipCode;
 		this.country = country;
-		}
+	}
 
 	public String getName() {
 		return name;
@@ -81,6 +84,4 @@ public class Student {
 	public void setStatus(Status status) {
 		this.status = status;
 	}
-	
-	
 }
