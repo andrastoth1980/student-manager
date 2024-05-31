@@ -26,6 +26,7 @@ public class MainView extends VerticalLayout{
 		
 		
 		createFieldVariables();
+		configureGrid();
 		
 		
 		
@@ -33,6 +34,14 @@ public class MainView extends VerticalLayout{
 		add(logoLayout, grid);
 		
 		loadStudents();
+	}
+
+	private void configureGrid() {
+		grid.setSizeFull();
+		grid.setColumns("country" , "zipCode");
+		grid.addColumn(s -> s.getName()).setHeader("Name");
+		
+		
 	}
 
 	private void loadStudents() {
