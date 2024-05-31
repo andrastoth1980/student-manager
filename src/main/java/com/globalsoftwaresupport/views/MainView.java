@@ -16,6 +16,7 @@ import com.vaadin.flow.router.Route;
 
 public class MainView extends VerticalLayout{
 	
+	private LogoLayout logoLayout;
 	private Grid<Student> grid;
 
 	public MainView() {
@@ -23,11 +24,27 @@ public class MainView extends VerticalLayout{
 		setSizeFull();
 		setAlignItems(Alignment.CENTER);
 		
+		
+		createFieldVariables();
+		
+		
+		
+		
+		add(logoLayout, grid);
+		
+		loadStudents();
+	}
+
+	private void loadStudents() {
 		List<Student> students = new ArrayList<>();
 		students.add(new Student("Adam",23,1627, "UK",new Status("ACTIVE")));
-		grid = new Grid<>(Student.class);
 		grid.setItems(students);
 		
-		add(grid);
+		
 	}
+
+	private void createFieldVariables() {
+		logoLayout = new LogoLayout();
+		grid = new Grid<>(Student.class);
+}
 }
