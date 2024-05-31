@@ -1,11 +1,33 @@
 package com.globalsoftwaresupport.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+
+@Entity
+
 public class Student {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
+	
+	@Column
 	private String name;
+	@Column
 	private int age;
+	@Column
 	private int zipCode;
+	@Column
 	private String country;
+	
+	@ManyToOne
+	@JoinColumn
 	private Status status;
 	
 	public Student() {
@@ -14,11 +36,11 @@ public class Student {
 
 	public Student(String name, int age, int zipCode, String country, Status status) {
 		this.name = name;
+		this.status = status;
 		this.age = age;
 		this.zipCode = zipCode;
 		this.country = country;
-		this.status = status;
-	}
+		}
 
 	public String getName() {
 		return name;
@@ -59,4 +81,6 @@ public class Student {
 	public void setStatus(Status status) {
 		this.status = status;
 	}
+	
+	
 }
