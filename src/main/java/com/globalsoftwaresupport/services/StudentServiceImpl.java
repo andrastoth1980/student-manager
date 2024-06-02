@@ -33,8 +33,8 @@ public class StudentServiceImpl implements StudentService{
 
 	@Override
 	public List<Student> find(String substring) {
-		// TODO Auto-generated method stub
-		return null;
+		return studentRepository.findStudents(substring);
+		
 	}
 
 }
