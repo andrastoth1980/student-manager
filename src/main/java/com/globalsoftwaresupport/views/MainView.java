@@ -48,7 +48,13 @@ public class MainView extends VerticalLayout{
 		filterField.setValueChangeMode(ValueChangeMode.LAZY);
 		filterField.addValueChangeListener(e -> updateStudents());
 		
-		return new HorizontalLayout(filterField);
+		Button addStudentButton = new Button("ADD_STUDENT");
+		Button removeStudentButton = new Button("REMOVE_STUDENT"); 
+		addStudentButton.addClickListener(e -> addStudentButton.getUI().ifPresent(ui -> ui.navigate("add-student")));
+		removeStudentButton.addClickListener(e -> removeStudentButton.getUI().ifPresent(ui -> ui.navigate("remove-student")));
+
+		return new HorizontalLayout(filterField, addStudentButton, removeStudentButton);  
+		
 	}
 
 	private void updateStudents() {
