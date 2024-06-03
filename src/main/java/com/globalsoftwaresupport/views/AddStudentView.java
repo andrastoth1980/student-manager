@@ -68,6 +68,7 @@ public class AddStudentView extends VerticalLayout {
 	}
 
 	private void createBinder() {
+		student = new Student();
 		this.binder = new BeanValidationBinder<>(Student.class);
 		this.binder.bindInstanceFields(this);
 	}
