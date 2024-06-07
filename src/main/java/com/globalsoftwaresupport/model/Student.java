@@ -11,6 +11,7 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 
 @Entity
@@ -22,7 +23,7 @@ public class Student {
 	private Integer id;
 	
 	@Column
-	@NotNull(message = "Name can not be null")
+	@NotEmpty(message = "Name can not be null")
 	private String name;
 	@Column
 	@Min(value = 0, message = "Age can not be smaller than 0")
@@ -35,7 +36,7 @@ public class Student {
 	@Digits(integer = 4, fraction = 0,message = "zip code must be 4 digits")
 	private int zipCode;
 	@Column
-	@NotNull(message = "Country must be specified")
+	@NotEmpty(message = "Country must be specified")
 	private String country;
 	
 	@ManyToOne
