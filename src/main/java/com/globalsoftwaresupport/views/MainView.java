@@ -3,6 +3,7 @@ package com.globalsoftwaresupport.views;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.globalsoftwaresupport.constants.Constants;
 import com.globalsoftwaresupport.model.Status;
 import com.globalsoftwaresupport.model.Student;
 import com.globalsoftwaresupport.services.StudentService;
@@ -48,8 +49,8 @@ public class MainView extends VerticalLayout{
 		filterField.setValueChangeMode(ValueChangeMode.LAZY);
 		filterField.addValueChangeListener(e -> updateStudents());
 		
-		Button addStudentButton = new Button("ADD_STUDENT");
-		Button removeStudentButton = new Button("REMOVE_STUDENT"); 
+		Button addStudentButton = new Button(Constants.ADD_STUDENT);
+		Button removeStudentButton = new Button(Constants.REMOVE_STUDENT); 
 		addStudentButton.addClickListener(e -> addStudentButton.getUI().ifPresent(ui -> ui.navigate("add-student")));
 		removeStudentButton.addClickListener(e -> removeStudentButton.getUI().ifPresent(ui -> ui.navigate("remove-student")));
 

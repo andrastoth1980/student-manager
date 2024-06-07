@@ -1,6 +1,7 @@
 package com.globalsoftwaresupport.views;
 
 
+import com.globalsoftwaresupport.constants.Constants;
 import com.globalsoftwaresupport.model.Status;
 import com.globalsoftwaresupport.model.Student;
 import com.globalsoftwaresupport.services.StatusService;
@@ -57,14 +58,14 @@ public class AddStudentView extends VerticalLayout {
 	}
 
 	private void createFieldVariables() {
-		this.age = new TextField("AGE");
-		this.name = new TextField("NAME");
-		this.zipCode = new TextField("ZIP_CODE");
-		this.country = new TextField("COUNTRY");
-		this.status = new ComboBox<Status>("STATUS");
+		this.age = new TextField(Constants.AGE);
+		this.name = new TextField(Constants.NAME);
+		this.zipCode = new TextField(Constants.ZIP_CODE);
+		this.country = new TextField(Constants.COUNTRY);
+		this.status = new ComboBox<Status>(Constants.STATUS);
 		this.image = new LogoLayout();
-		this.save = new Button("SAVE");
-		this.close = new Button("CANCEL");
+		this.save = new Button(Constants.SAVE);
+		this.close = new Button(Constants.CANCEL);
 	}
 
 	private void createBinder() {

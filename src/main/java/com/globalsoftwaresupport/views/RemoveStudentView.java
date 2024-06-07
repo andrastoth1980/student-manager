@@ -2,6 +2,7 @@ package com.globalsoftwaresupport.views;
 
 import java.util.Set;
 
+import com.globalsoftwaresupport.constants.Constants;
 import com.globalsoftwaresupport.model.Student;
 import com.globalsoftwaresupport.services.StudentService;
 import com.vaadin.flow.component.Component;
@@ -96,8 +97,8 @@ public class RemoveStudentView extends VerticalLayout
 		}
 		private void createFieldVariables() {
 			grid = new Grid<>(Student.class);
-			remove = new Button("Remove");
-			cancel = new Button("Cancel");
+			remove = new Button(Constants.REMOVE);
+			cancel = new Button(Constants.CANCEL);
 			
 		}
 		
