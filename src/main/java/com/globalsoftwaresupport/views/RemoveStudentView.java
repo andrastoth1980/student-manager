@@ -23,8 +23,7 @@ import com.vaadin.flow.router.Route;
 
 @PageTitle("Remove Students")
 @Route(value = "remove-student")
-public class RemoveStudentView extends VerticalLayout
-			implements SelectionListener<Grid<Student>, Student>{
+public class RemoveStudentView extends VerticalLayout implements SelectionListener<Grid<Student>, Student>{
 
 		private Grid<Student> grid;
 		private final StudentService studentService;
@@ -61,8 +60,7 @@ public class RemoveStudentView extends VerticalLayout
 		}
 		private void removeSelected() {
 			selected.forEach(studentService::remove);
-			Notification notification = Notification
-			        .show(selected.size() + " student(s) have been removed successfully...");
+			Notification notification = Notification.show(selected.size() + " student(s) have been removed successfully...");
 			notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
 			grid.setItems(studentService.findAll());
 
@@ -105,6 +103,6 @@ public class RemoveStudentView extends VerticalLayout
 
 		@Override
 		public void selectionChange(SelectionEvent<Grid<Student>, Student> event) {
-			// TODO Auto-generated method stub
+			selected = event.getAllSelectedItems();
 			
 		}}
