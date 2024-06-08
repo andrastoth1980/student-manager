@@ -45,7 +45,7 @@ class StudentManagerApplicationTests {
 
         // Verify the student is added
         List<Student> students = studentService.findAll();
-        assertThat(students).extracting(Student::getName).contains("Test Student");
+        assertThat(students).extracting(Student::getName).contains("Pest Student");
 
         // Remove the student
         studentService.remove(student);
