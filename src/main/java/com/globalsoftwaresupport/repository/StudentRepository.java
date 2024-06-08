@@ -12,6 +12,6 @@ import com.globalsoftwaresupport.model.Student;
 @Repository
 public interface StudentRepository extends 
 					JpaRepository<Student, Integer>{
-	@Query("select s from Student s where lower(s.name) like lower(concat('%', :term, '%s'))")
+	@Query("select s from Student s where lower(s.name) like lower(concat('%', :term, '%'))")
 	List<Student> find(@Param("term") String term);
 }
