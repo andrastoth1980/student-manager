@@ -28,7 +28,6 @@ public class Student {
 	@Column
 	@Min(value = 0, message = "Age can not be smaller than 0")
 	@Max(value = 120, message = "Age can not be larger than 120")
-	@NotEmpty(message = "Age must be added")
 	private int age;
 	@Column
 	@Min(value = 0, message = "Zip code cannot be smaller then 0")
