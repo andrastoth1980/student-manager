@@ -42,11 +42,11 @@ class StudentManagerApplicationTests {
 
         // Save the student
         studentService.save(student);
-
+        //
         // Verify the student is added
         List<Student> students = studentService.findAll();
-        assertThat(students).extracting(Student::getName).contains("Pest Student");
-
+        assertThat(students).extracting(Student::getName).contains("P444est Student");
+        
         // Remove the student
         studentService.remove(student);
 
